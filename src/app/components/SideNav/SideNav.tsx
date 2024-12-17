@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, JSX } from 'react';
 
 const SideNav = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -52,7 +52,7 @@ const SideNav = () => {
     };
 
 
-    const SideNavBarCompoenent: any = () => {
+    const SideNavBarCompoenent = (): JSX.Element => {
         return (
             <aside
                 ref={sidebarRef}
