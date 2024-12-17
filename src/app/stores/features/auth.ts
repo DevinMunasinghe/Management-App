@@ -28,6 +28,7 @@ export const auth = createSlice({
         login: (state, action: PayloadAction<string>) => {
             return {
                 value: {
+                    ...state.value,
                     isAuth: true,
                     username: action.payload,
                     isModerator: false

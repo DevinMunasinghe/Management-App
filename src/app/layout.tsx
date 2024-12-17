@@ -1,6 +1,9 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReduxProvider } from "./stores/provider";
+import SideNav from "./components/SideNav/SideNav";
+
 
 
 export const metadata: Metadata = {
@@ -15,11 +18,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
+      <head>
+        <script
+          src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"
+          defer
+        ></script>
+      </head>
+      <body className="bg-black">
         <ReduxProvider>
-          {children}
-        </ReduxProvider>
+          <main className="flex flex-col h-screen">
+            <div className="flex flex-1">
+              <div className="bg-black border-r border-black z-50 relative" >
+                <SideNav />
+              </div>
 
+              <div className="flex-1 overflow-y-auto bg-black no-scrollbar">
+                <div
+                  className="px-4 mt-10 h-full overflow-y-auto no-scrollbar"
+                  style={{ maxHeight: "calc(100vh - 64px)" }}
+                >
+                  {children}
+                </div>
+              </div>
+            </div>
+          </main>
+        </ReduxProvider>
       </body>
     </html>
   );
