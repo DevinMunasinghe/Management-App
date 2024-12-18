@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from './features/auth';
+import tabReducer from './features/tab';
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 export const store = configureStore({
     reducer: {
         authReducer,
+        tabReducer
     }
 })
 
