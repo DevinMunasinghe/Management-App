@@ -28,7 +28,7 @@ const AddTaskForm = () => {
             } else {
                 setError(response.message || 'An error occurred.');
             }
-        } catch (error: any) {
+        } catch {
             setError('Failed to create task. Please try again.');
         } finally {
             setLoading(false);
